@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preformation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="brand">Site prefo</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="interview/interview.html">Interview</a>
+                <a href="interview/conclusion.html">Conclusion</a>
+                <a href="expo/expo.html">Expo</a>
+                <a href="expo/galerie.html">Gallerie</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="world1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="interview.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="budha.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="retro.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="pic1.mp4" autoplay muted loop></video>
+    <div class="content active">
+        <h1> HOME <br></h1>
+        <p>Bonjour je m'appel Struys Sebastien je vous souhaite <br> la bienvenu sur mon site de préformation pour le CF2M</p>
+    </div>
+    <div class="content">
+        <h1>Interview<br></h1>
+        <p>"Ici, je vous présente mon interview réalisée par Arnaud.D, <br> qui lui aussi a suivi une formation de développeur web pour devenir spécialiste en JavaScript chez Dastra
+         </p>
+         <a href="interview/interview.html">Interview</a>
+    </div>
+    <div class="content">
+        <h1>Conclusion</h1>
+        <p>Ici vous pouvez lire ma conclusion que j ai fait apres mon interview avec Arnaud </p>
+        <a href="interview/conclusion.html">Conclusion</a>
+    </div>
+    <div class="content">
+        <h1>Expo</h1>
+        <p>ici je vous raconte mon resenti par a port a notre exposition visite au NAM-ip a namur</p>
+        <a href="expo/expo.html">Expo</a>
+    </div>
+    <div class="content">
+        <h1>Photos</h1>
+        <p>voici ma gallerie photo de notre exposition a namur</p>
+        <a href="expo/galerie.html">Photos</a>
+    </div>
+    <div class="media-icons">
+                <a href="#"> <i class="fab fa-facebook-f"></i></a>
+                <a href="#"> <i class="fab fa-instagram"></i></a>
+                <a href="#"> <i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <script type="text/javascript">
+        //javascript of responive navigation menu 
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //javascripte for video slider navigation
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+
+
+</body>
+</html>
